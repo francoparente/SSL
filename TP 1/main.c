@@ -23,5 +23,12 @@ int main()
 } 
 */
 
-enum token {FDT=EOF, CAD, SEP=","};
+int main (void){
+
+    get_token();
+
+
+    return 0;
+}
+
 
