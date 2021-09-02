@@ -11,11 +11,11 @@ int main()
 } 
 */
 
-enum tokens{FDT, CAD, SEP};
+enum token_enum{FDT, CAD, SEP};
 
 typedef struct token {
     int tipo;
     char * contenido;
-}Token;
+}token_struct;
 
 int get_token();

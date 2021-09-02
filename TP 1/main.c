@@ -13,8 +13,10 @@ hay q compartir un buffer.
 
 int main (void)
 {
-    enum tokens token;
-    
+    // enum token_enum token;
+
+    token_struct token;
+
     get_token();
 
 
