@@ -12,3 +12,5 @@ int main()
 */
 
 enum token {FDT=EOF, CAD, SEP=","};
+
+int get_token();
