@@ -11,6 +11,16 @@ int main()
 } 
 */
 
-enum token {FDT=EOF, CAD, SEP=","};
+enum token
+{
+    FDT=EOF,
+    CAD,
+    SEP= ','
+};
+
+typedef struct token {
+    char kind;        // what kind of token
+    double value;
+};
 
 int get_token();

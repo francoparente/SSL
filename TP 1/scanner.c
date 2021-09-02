@@ -1,5 +1,8 @@
-#include<ctype.h>
+#include <ctype.h>
 #include "scanner.h"
+
+// Usar función isspace().
+// Usar función ungetc().
 
 /**
  * @brief Muestra en pantalla los resultados devueltos: que token es y el lexema correspondiente
@@ -7,7 +10,7 @@
  * @return token 
  */
 
-int get_token(void){
+token get_token(void){
     //HACER LA FUNCION
 
     int algo;
@@ -23,5 +26,23 @@ int get_token(void){
     return 0;
 }
 
-// Usar función isspace().
-// Usar función ungetc().
+token get_token()    // read a token from cin
+{
+    char ch;
+    ch = getchar();
+
+    switch (ch)
+    {
+        case EOF:
+            return FDT;
+            break;
+        case ',':
+            return SEP;
+            break;
+        default:
+            return CAD;
+            break;
+    }
+
+    printf (": %c", ch);
+}
