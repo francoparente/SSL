@@ -14,8 +14,8 @@ int main()
 enum tokens{FDT, CAD, SEP};
 
 typedef struct token {
-    char kind;        // what kind of token
-    double value;
+    int tipo;
+    char * contenido;
 };
 
 int get_token();
