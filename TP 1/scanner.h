@@ -11,12 +11,7 @@ int main()
 } 
 */
 
-enum token
-{
-    FDT=EOF,
-    CAD,
-    SEP= ','
-};
+enum tokens{FDT, CAD, SEP};
 
 typedef struct token {
     char kind;        // what kind of token
