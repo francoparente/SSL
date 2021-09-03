@@ -38,7 +38,15 @@ Token get_token(char *buffer)
 
         if(es_cadena(lectura))      //si lo que lee es una cadena, entonces...
         {
-            tipo_token = CAD;       //tipo_token es CAD.
+            for(int i=0; es_cadena(lectura); i++)
+            {
+                buffer[cursor] = lectura;   //lo que leí lo guardo en el buffer.
+                cursor++;                   //adelanto el cursor del buffer para guardar lo proximo que lea.
+                lectura = getchar();        //continúo leyendo el siguiente caracter del stdin.
+            }
+            buffer[cursor] = "\0";          //cierro la cadena del buffer.
+            ungetc(lectura, stdin);         //retrocedo el cursor del getchar para que vuelva a leer lo ultimo que leyó del stdin (para no perder la ",", si es que hubo).
+            tipo_token = CAD;               //tipo_token es CAD.
         }
 
         if(tipo_token != UNDEFINED)
