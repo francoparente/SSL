@@ -9,16 +9,17 @@
 bool es_cadena (lectura)
 {
     if (lectura!="," && !isspace(lectura) && lectura!=EOF)
-        return true; //devuelvo true si el parámetro de es_cadena es distinto de coma, espacio o fin de texto.
+        return true;                //devuelvo true si el parámetro de es_cadena es distinto de coma, espacio o fin de texto.
     else
-        return false; // sino devuelvo falso
+        return false;               // sino devuelvo false.
 }
 
 Token get_token(char *buffer)
 {
-    char lectura = getchar();
+    int cursor = 0;                 //declaro cursor que me va a ayudar a guardar en el buffer lo que voy leyendo.
+    char lectura = getchar();       //declaro variable char donde voy a almacenar el valor que se lee en cada instante.
 
-    Token tipo_token;
+    Token tipo_token;               //declaro variable de tipo Token (enum).
 
     while(lectura != Fin_de_texto)
     {
@@ -30,6 +31,11 @@ Token get_token(char *buffer)
 
         if(lectura == ",")          //si lee una coma...
         {
+            buffer[cursor] = lectura;
+            cursor++;
+            buffer[cursor] = "\0";
+            
+
             tipo_token = SEP;       //tipo_token es SEP.
         }
 
