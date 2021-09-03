@@ -20,12 +20,12 @@ int main (void)
 
     while(token != FDT)
     {
-        if(token = SEP)
+        if(token == SEP)
         {
             printf("Separador: %s \n", buffer);
         }
         
-        else if(token = CAD)
+        else if(token == CAD)
         {
             printf("Cadena: %s \n", buffer);
         }
