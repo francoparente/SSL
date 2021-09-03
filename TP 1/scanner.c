@@ -3,7 +3,6 @@
 
 #define Fin_de_texto EOF
 
-// Usar función ungetc().
 
 bool es_cadena (lectura)
 {
@@ -20,7 +19,7 @@ Token get_token(char *buffer)
 
     Token tipo_token;               //declaro variable de tipo Token (enum).
 
-    while(lectura != Fin_de_texto)
+    while(lectura != Fin_de_texto)  //mientras haya algo que leer, es decir, no sea EOF.
     {
         if(isspace(lectura))        //isspace me dice si lectura es un espacio o no.
         {
@@ -30,9 +29,9 @@ Token get_token(char *buffer)
 
         if(lectura == ",")          //si lee una coma...
         {
-            buffer[cursor] = lectura;
-            cursor++;
-            buffer[cursor] = "\0";
+            buffer[cursor] = lectura;   //la guardo en el buffer.
+            cursor++;                   //avanzo el cursor del buffer un lugar.
+            buffer[cursor] = "\0";      //y cierro el contenido.
             tipo_token = SEP;       //tipo_token es SEP.
         }
 
@@ -44,8 +43,10 @@ Token get_token(char *buffer)
                 cursor++;                   //adelanto el cursor del buffer para guardar lo proximo que lea.
                 lectura = getchar();        //continúo leyendo el siguiente caracter del stdin.
             }
+            
             buffer[cursor] = "\0";          //cierro la cadena del buffer.
             ungetc(lectura, stdin);         //retrocedo el cursor del getchar para que vuelva a leer lo ultimo que leyó del stdin (para no perder la ",", si es que hubo).
+            
             tipo_token = CAD;               //tipo_token es CAD.
         }
 
