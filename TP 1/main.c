@@ -17,7 +17,10 @@ int main (void)
     Token token;
     token = get_token();
 
-    
+    while(...)
+    {
+        ...
+    }
 
     return 0;
 }
