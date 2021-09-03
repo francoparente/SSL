@@ -23,19 +23,19 @@ Token get_token(char *buffer)
     {
         if(isspace(lectura))
         {
-            lectura = getchar(); //si lee un espacio, le digo que siga leyendo y no devuelve nada (que ignore el espacio).
-            tipo_token = EOF;
+            lectura = getchar(); //si lee un espacio, le digo que siga leyendo (que ignore el espacio).
+            tipo_token = UNDEFINED; // tipo_token es UNDEFINED.
         }
 
         if(lectura == ",")      //si lee una coma...
-            tipo_token = SEP;   //get_token devuelve SEP
+            tipo_token = SEP;   //tipo_token es SEP.
 
         if(es_cadena(lectura))  //si lo que lee es una cadena, entonces...
-            tipo_token = CAD;   //get_token devuelve SEP
+            tipo_token = CAD;   //tipo_token es CAD.
 
-        if(tipo_token )
-        return tipo_token;
+        if(tipo_token != UNDEFINED)
+            return tipo_token;  //si tipo_token no es UNDEFINED (espacio) devuelvo el valor. Sino vuelve a empezar el while.
     }
 
-    return FDT;
+    return FDT; //una vez que sale del while, devuelvo FDT, porque significa que no hay más nada que leer.
 }

@@ -5,6 +5,6 @@
 
 #pragma once
 
-typedef enum {FDT, CAD, SEP} Token;
+typedef enum {UNDEFINED, FDT, CAD, SEP} Token;
 
 Token get_token();
