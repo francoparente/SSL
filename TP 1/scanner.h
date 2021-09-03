@@ -1,27 +1,14 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
+
 #pragma once
 
-//ejemplo de enum:
-/*
-enum week{Mon, Tue, Wed, Thur, Fri, Sat, Sun};
-  
-int main()
-{
-    enum week day;
-    day = Wed;
-    printf("%d",day);
-    return 0;
-} 
-*/
-
-typedef enum token_enum{
+typedef enum{
     FDT,
     CAD,
     SEP
-    }token_t;
+    }Token;
 
-typedef struct lexema {
-    token_t kind;
-    char * contenido;
-}lexema_t;
-
-int get_token();
+Token get_token();

@@ -1,4 +1,3 @@
-#include <ctype.h>
 #include "scanner.h"
 
 // Usar función isspace().
