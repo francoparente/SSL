@@ -17,9 +17,9 @@ int main (void)
     Token token;
     token = get_token();
 
-    while(...)
+    while(siga leyendo la cadena, es decir, el token no sea igual a FDT)
     {
-        ...
+        
     }
 
     return 0;
