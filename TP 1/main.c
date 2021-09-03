@@ -14,10 +14,10 @@ int main (void)
 {
     // enum token_enum token;
 
-    token_struct token;
+    Token token;
+    token = get_token();
 
-    get_token();
-
+    
 
     return 0;
 }
