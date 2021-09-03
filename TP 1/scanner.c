@@ -25,11 +25,12 @@ Token get_token(char *buffer)
     {
         if(isspace(lectura))
             lectura = getchar(); //si lee un espacio, le digo que siga leyendo (que ignore el espacio).
-    
-        if(es_cadena(lectura) //si lo que lee es una cadena, entonces...
-        {
+        
+        if(lectura == ",")
+            return SEP;
 
-        }
+        if(es_cadena(lectura)) //si lo que lee es una cadena, entonces...
+            return CAD;
     
     }
 
