@@ -10,11 +10,11 @@ hay que llamar un get_token para que lea varios tokens.
 hay q compartir un buffer.
 */
 
-char * buffer[256];
-
 int main (void)
 {
     Token token = get_token();
+
+    char * buffer[256];
 
     while(token != FDT)
     {
