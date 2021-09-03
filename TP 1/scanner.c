@@ -4,16 +4,12 @@
 // Usar función isspace().
 // Usar función ungetc().
 
-/**
- * @brief -
- * 
- * @return token 
- */
-
 bool es_cadena (lectura)
 {
     if (lectura!="," && !isspace(lectura) && lectura!=EOF)
-    return true;
+        return true;
+    else
+        return false;
 }
 
 Token get_token(char *buffer)
