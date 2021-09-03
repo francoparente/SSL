@@ -1,3 +1,5 @@
+#pragma once
+
 //ejemplo de enum:
 /*
 enum week{Mon, Tue, Wed, Thur, Fri, Sat, Sun};
@@ -11,11 +13,15 @@ int main()
 } 
 */
 
-enum token_enum{FDT, CAD, SEP};
+typedef enum token_enum{
+    FDT,
+    CAD,
+    SEP
+    }token_t;
 
-typedef struct token {
-    int tipo;
+typedef struct lexema {
+    token_t kind;
     char * contenido;
-}token_struct;
+}lexema_t;
 
 int get_token();

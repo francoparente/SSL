@@ -10,7 +10,7 @@
  * @return token 
  */
 
-token get_token(void){
+token_struct get_token(void){
     //HACER LA FUNCION
 
     int algo;
@@ -26,7 +26,7 @@ token get_token(void){
     return 0;
 }
 
-token get_token()    // read a token from cin
+token_t get_token()
 {
     char ch;
     ch = getchar();
