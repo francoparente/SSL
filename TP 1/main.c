@@ -16,15 +16,22 @@ int main (void)
 
     char * buffer[256];
 
+    printf("\n");
+
     while(token != FDT)
     {
         if(token = SEP)
         {
-            printf("Separador: %s \n", )
+            printf("Separador: %s \n", buffer);
         }
+        
+        else if(token = CAD)
+        {
+            printf("Cadena: %s \n", buffer);
+        }
+
+        token = get_token(buffer);
     }
 
-    return 0;
+    printf("--- Fin de texto --- \n");
 }
-
-
