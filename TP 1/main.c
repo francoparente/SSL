@@ -12,14 +12,11 @@ hay q compartir un buffer.
 
 int main (void)
 {
-    // enum token_enum token;
+    Token token = get_token();
 
-    Token token;
-    token = get_token();
-
-    while(siga leyendo la cadena, es decir, el token no sea igual a FDT)
+    while(token != FDT)
     {
-        if(token es una coma)
+        if(token = SEP)
         {
             printf("Separador: %s \n", )
         }
