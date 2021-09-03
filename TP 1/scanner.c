@@ -3,7 +3,12 @@
 
 #define Fin_de_texto EOF
 
-
+/**
+ * @brief Indica si la variable lectura es o no una cadena.
+ * 
+ * @return true si es una cadena (para eso no debe ser ni coma, ni espacio, ni EOF).
+ * @return false si no es una cadena (o es una coma, o un espacio, o EOF).
+ */
 bool es_cadena (lectura)
 {
     if (lectura!="," && !isspace(lectura) && lectura!=EOF)
@@ -12,6 +17,12 @@ bool es_cadena (lectura)
         return false;               // sino devuelvo false.
 }
 
+/**
+ * @brief Obtiene el tipo de token correspondiente a lo que se leyó.
+ * 
+ * @param buffer 
+ * @return Qué tipo de token es (CAD, SEP o FDT).
+ */
 Token get_token(char *buffer)
 {
     int cursor = 0;                 //declaro cursor que me va a ayudar a guardar en el buffer lo que voy leyendo.
