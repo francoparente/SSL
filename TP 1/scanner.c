@@ -7,9 +7,9 @@
 bool es_cadena (lectura)
 {
     if (lectura!="," && !isspace(lectura) && lectura!=EOF)
-        return true;
+        return true; //devuelvo true si el parámetro de es_cadena es distinto de coma, espacio o fin de texto.
     else
-        return false;
+        return false; // sino devuelvo falso
 }
 
 Token get_token(char *buffer)
@@ -22,13 +22,20 @@ Token get_token(char *buffer)
     while(lectura != EOF)
     {
         if(isspace(lectura))
-            lectura = getchar(); //si lee un espacio, le digo que siga leyendo (que ignore el espacio).
-        
-        if(lectura == ",")
-            tipo_token = SEP;
+        {
+            lectura = getchar(); //si lee un espacio, le digo que siga leyendo y no devuelve nada (que ignore el espacio).
+            tipo_token = EOF;
+        }
 
-        if(es_cadena(lectura)) //si lo que lee es una cadena, entonces...
-            tipo_token = CAD;
+        if(lectura == ",")      //si lee una coma...
+            tipo_token = SEP;   //get_token devuelve SEP
+
+        if(es_cadena(lectura))  //si lo que lee es una cadena, entonces...
+            tipo_token = CAD;   //get_token devuelve SEP
+
+        if(tipo_token )
+        return tipo_token;
     }
-    return tipo_token;
+
+    return FDT;
 }
