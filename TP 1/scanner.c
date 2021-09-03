@@ -1,4 +1,5 @@
 #include "scanner.h"
+#include <stdbool.h>
 
 // Usar función isspace().
 // Usar función ungetc().
@@ -11,7 +12,8 @@
 
 bool es_cadena (lectura)
 {
-    return lectura!="," && !isspace(lectura) && lectura!=EOF;
+    if (lectura!="," && !isspace(lectura) && lectura!=EOF)
+    return true;
 }
 
 Token get_token(char *buffer)
