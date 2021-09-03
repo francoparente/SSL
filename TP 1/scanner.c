@@ -9,12 +9,25 @@
  * @return token 
  */
 
-Token get_token(char *buffer){
-
+Token get_token(char *buffer)
+{
     int cursor;
     char lectura = getchar();
-    lectura = getchar();
-    
 
-    return 0;
+    Token tipo_token;
+
+    while(lectura != EOF)
+    {
+        if(isspace(lectura))
+            lectura = getchar(); //si lee un espacio, le digo que siga leyendo (que ignore el espacio).
+    
+        if(es_cadena(lectura)
+        {
+            
+        }
+    
+    }
+
+
+    return tipo_token;
 }
