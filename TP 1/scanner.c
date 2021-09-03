@@ -3,7 +3,6 @@
 
 #define Fin_de_texto EOF
 
-// Usar función isspace().
 // Usar función ungetc().
 
 bool es_cadena (lectura)
@@ -23,7 +22,7 @@ Token get_token(char *buffer)
 
     while(lectura != Fin_de_texto)
     {
-        if(isspace(lectura))
+        if(isspace(lectura))        //isspace me dice si lectura es un espacio o no.
         {
             lectura = getchar();    //si lee un espacio, le digo que siga leyendo (que ignore el espacio).
             tipo_token = UNDEFINED; // tipo_token es UNDEFINED.
@@ -34,13 +33,13 @@ Token get_token(char *buffer)
             buffer[cursor] = lectura;
             cursor++;
             buffer[cursor] = "\0";
-            
-
             tipo_token = SEP;       //tipo_token es SEP.
         }
 
         if(es_cadena(lectura))      //si lo que lee es una cadena, entonces...
+        {
             tipo_token = CAD;       //tipo_token es CAD.
+        }
 
         if(tipo_token != UNDEFINED)
             return tipo_token;      //si tipo_token no es UNDEFINED (espacio) devuelvo el valor. Sino vuelve a empezar el while.
