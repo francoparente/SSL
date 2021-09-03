@@ -1,5 +1,4 @@
 #include "scanner.h"
-#include <stdbool.h>
 
 #define Fin_de_texto EOF
 
@@ -17,12 +16,6 @@ bool es_cadena (char lectura)
         return false;               // sino devuelvo false.
 }
 
-/**
- * @brief Obtiene el tipo de token correspondiente a lo que se leyó.
- * 
- * @param buffer 
- * @return Qué tipo de token es (CAD, SEP o FDT).
- */
 Token get_token(char *buffer)
 {
     int cursor = 0;                 //declaro cursor que me va a ayudar a guardar en el buffer lo que voy leyendo.
