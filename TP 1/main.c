@@ -19,7 +19,10 @@ int main (void)
 
     while(siga leyendo la cadena, es decir, el token no sea igual a FDT)
     {
-        
+        if(token es una coma)
+        {
+            printf("Separador: %s \n", )
+        }
     }
 
     return 0;
