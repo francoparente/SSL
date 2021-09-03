@@ -9,9 +9,9 @@
  * @return true si es una cadena (para eso no debe ser ni coma, ni espacio, ni EOF).
  * @return false si no es una cadena (o es una coma, o un espacio, o EOF).
  */
-bool es_cadena (lectura)
+bool es_cadena (char lectura)
 {
-    if (lectura!="," && !isspace(lectura) && lectura!=EOF)
+    if (lectura!=',' && !isspace(lectura) && lectura!=EOF)
         return true;                //devuelvo true si el parámetro de es_cadena es distinto de coma, espacio o fin de texto.
     else
         return false;               // sino devuelvo false.
@@ -38,11 +38,11 @@ Token get_token(char *buffer)
             tipo_token = UNDEFINED; // tipo_token es UNDEFINED.
         }
 
-        if(lectura == ",")          //si lee una coma...
+        if(lectura == ',')          //si lee una coma...
         {
             buffer[cursor] = lectura;   //la guardo en el buffer.
             cursor++;                   //avanzo el cursor del buffer un lugar.
-            buffer[cursor] = "\0";      //y cierro el contenido.
+            buffer[cursor] = '\0';      //y cierro el contenido.
             tipo_token = SEP;       //tipo_token es SEP.
         }
 
@@ -55,7 +55,7 @@ Token get_token(char *buffer)
                 lectura = getchar();        //continúo leyendo el siguiente caracter del stdin.
             }
             
-            buffer[cursor] = "\0";          //cierro la cadena del buffer.
+            buffer[cursor] = '\0';          //cierro la cadena del buffer.
             ungetc(lectura, stdin);         //retrocedo el cursor del getchar para que vuelva a leer lo ultimo que leyó del stdin (para no perder la ",", si es que hubo).
             
             tipo_token = CAD;               //tipo_token es CAD.
