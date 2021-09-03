@@ -4,44 +4,17 @@
 // Usar función ungetc().
 
 /**
- * @brief Muestra en pantalla los resultados devueltos: que token es y el lexema correspondiente
+ * @brief -
  * 
  * @return token 
  */
 
-token_struct get_token(void){
-    //HACER LA FUNCION
+Token get_token(char *buffer){
 
-    int algo;
-
-    printf("Escriba algo:\n");
-
-    algo = getchar();
-
-    printf("El token introducido es: %c\n", ??);
-    printf("El lexema correspondiente es: %c\n", ??);
+    int cursor;
+    char lectura = getchar();
+    lectura = getchar();
     
 
     return 0;
-}
-
-token_t get_token()
-{
-    char ch;
-    ch = getchar();
-
-    switch (ch)
-    {
-        case EOF:
-            return FDT;
-            break;
-        case ',':
-            return SEP;
-            break;
-        default:
-            return CAD;
-            break;
-    }
-
-    printf (": %c", ch);
 }
