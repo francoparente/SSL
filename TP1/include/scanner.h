@@ -1,10 +1,11 @@
+
+#pragma once
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
 #include <stdbool.h>
-
-#pragma once
 
 typedef enum {UNDEFINED, FDT, CAD, SEP} Token;
 //defino un tipo de dato Token, que a su vez es un enum, es decir,

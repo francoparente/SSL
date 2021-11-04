@@ -2,9 +2,9 @@
 
 int main (void)
 {
-    Token token = get_token();
+    char buffer[255]; //declaro un buffer (array de char) de 255 bytes al cual se le va a agregar el '\0'. 
 
-    char * buffer[256];
+    Token token = get_token(buffer); //llamo a get_token y le paso el buffer declarado.
 
     printf("\n");
 

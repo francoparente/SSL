@@ -8,7 +8,9 @@
  * @return true si es una cadena (para eso no debe ser ni coma, ni espacio, ni EOF).
  * @return false si no es una cadena (o es una coma, o un espacio, o EOF).
  */
-bool es_cadena (char lectura)
+static bool es_cadena (char lectura); //Esta funcion es privada, por eso la dejo acá y le pongo el static.
+
+static bool es_cadena (char lectura)
 {
     if (lectura!=',' && !isspace(lectura) && lectura!=EOF)
         return true;                //devuelvo true si el parámetro de es_cadena es distinto de coma, espacio o fin de texto.
